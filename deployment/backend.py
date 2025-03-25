@@ -12,9 +12,10 @@ MODEL_PATH = os.path.join(os.path.dirname(__file__), 'recovery_model.keras')
 model = tf.keras.models.load_model(MODEL_PATH)
 
 
-# Load enhanced class labels
-with open("class_labels.json", "r") as f:
+CLASS_LABELS_PATH = os.path.join(os.path.dirname(__file__), 'class_labels.json')
+with open(CLASS_LABELS_PATH, "r") as f:
     class_labels = json.load(f)
+
 
 # Initialize Flask app
 app = Flask(__name__)

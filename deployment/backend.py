@@ -8,8 +8,9 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
 # Load model
-MODEL_PATH = "recovery_model.keras"
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'recovery_model.keras')
 model = tf.keras.models.load_model(MODEL_PATH)
+
 
 # Load enhanced class labels
 with open("class_labels.json", "r") as f:
